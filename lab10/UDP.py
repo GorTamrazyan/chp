@@ -2,12 +2,10 @@ import socket
 
 class UDPSocket:
     def __init__(self):
-        """Initialize the UDP socket."""
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sock.settimeout(5) 
 
     def __del__(self):
-        """Clean up the socket."""
         self.sock.close()
 
     def send_datagram(self, msg: bytes, address: tuple):
